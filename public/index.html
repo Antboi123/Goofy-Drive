@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goofy Drive</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🚀 Goofy Drive</h1>
+    <p>Secure docs storage with free + pro plans.</p>
+  </header>
+
+  <main>
+    <section class="card" id="authCard">
+      <h2>Account</h2>
+      <div class="row">
+        <input id="email" placeholder="Email" />
+        <input id="password" type="password" placeholder="Password (8+ chars)" />
+      </div>
+      <div class="row">
+        <button onclick="register()">Register</button>
+        <button onclick="login()">Login</button>
+        <button onclick="logout()">Logout</button>
+      </div>
+      <p id="authState">Not logged in.</p>
+    </section>
+
+    <section class="card hidden" id="appCard">
+      <h2>Drive</h2>
+      <p id="planText"></p>
+
+      <h3>Create folder</h3>
+      <div class="row">
+        <input id="folderName" placeholder="Folder name" />
+        <button onclick="createFolder()">Create</button>
+      </div>
+
+      <h3>Upload document</h3>
+      <div class="row">
+        <input type="file" id="fileInput" />
+        <select id="visibility"><option value="private">Private</option><option value="public">Public</option></select>
+        <select id="folderSelect"><option value="">No folder</option></select>
+        <button onclick="uploadFile()">Upload</button>
+      </div>
+
+      <h3>Subscriptions</h3>
+      <div class="row">
+        <button onclick="checkout()">Start Pro Checkout</button>
+        <button onclick="activatePro()">Mock Activate Pro</button>
+      </div>
+
+      <h3>My files</h3>
+      <ul id="mine"></ul>
+      <h3>Public files</h3>
+      <ul id="public"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
